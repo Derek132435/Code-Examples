@@ -1,0 +1,24 @@
+
+//What are the prerequisites for GUI?
+prerequisites(X, 'GUI Programming').
+
+//How many credits is Assembly Language?
+credits(X, 'Assembly Language').
+
+//How many courses are there for an SET degree and how many credits?
+count_courses(Courses), count_total_credits(Credits, _).
+
+//If I take no more than 8 credits per term, how many years before I graduate?
+credits_per_term_to_graduate(8).
+
+//Which courses should I take Fall term, Freshman year to graduate in 4 years?
+offered(offered(fall), Class_Number, Name), year(year(freshman), Class_Number, Name).
+
+//full course info
+course(cst211, X, Y, Z, A, B, C).
+
+//How many courses are offered during the summer?
+count_courses_offered(X, offered(summer)).
+
+//how many courses are required?
+count_courses_required(X, required(yes)).

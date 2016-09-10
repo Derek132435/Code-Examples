@@ -1,0 +1,49 @@
+# Derek Edwards
+# 8/9/16
+# Calculator: combines BASH and C
+
+#NOTE:
+#Script requires command: export PATH=$PATH:.
+
+#!/bin/bash
+
+debug=
+
+if [ -n "$debug" ] ; then echo "debug starting..." ; fi
+
+operator=
+int1=
+int2=
+
+#bashCalc <'operator'> <num1> <num2>
+
+# testing args
+for op in "$@";
+do
+
+	if [ -z "$operator" ] ; then
+		operator=$op
+		if [ -n "$debug" ] ; then echo "debug: operator $op" ; fi
+	elif [ -z "$int1" ]; then
+		int1=$op
+		if [ -n "$debug" ] ; then echo "debug: int1 $op" ; fi
+	elif [ -z "$int2" ]; then
+		int2=$op
+		if [ -n "$debug" ] ; then echo "debug: int2 $op" ; fi
+	else
+		echo $'Too many args \nbashCalc <'operator'> <num1> <num2>, operator must be in single quotes'
+		exit 2
+	fi	
+done
+
+if [ -z "$operator" ] || [ -z "$int1" ] || [ -z "$int2" ]; then
+	echo $'Too few args \nbashCalc <'operator'> <num1> <num2>, operator must be in single quotes'
+	exit 3
+fi
+
+echo "$operator $int1 $int2"
+
+cReturn=`CCalc.o "$operator" "$int1" "$int2"`
+echo "$cReturn"
+
+exit 0
