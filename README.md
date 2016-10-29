@@ -5,8 +5,6 @@ BASH_C_Combination: Source code for a calculator that is implemented through the
 
 Binary_Search_Tree_C++: Self implemented Binary Search Tree Class
 
-Expert_System_prolog: A simple Expert System written in prolog that stores data on a university software engineering program. Designed to answer any questions a user might have via queries (examples given).
-
 Geometry_Server_erlang: A simple server written in Erlang to play with concurrent programming. Server can be started and will continuously loop until shut down. Will accept and answer questions that are sent to it.
 
 Hash_Map_Fun_C++: Self implemented HashMap. Can store and search a book for how many times a specified word appears and what the 10 most common words are.
